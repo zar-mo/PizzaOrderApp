@@ -98,8 +98,8 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot your password?"/>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gB7-bV-r7M">
-                                        <rect key="frame" x="50" y="451.33333333333331" width="293" height="30"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZx-dS-Mdl" userLabel="signUp container">
+                                        <rect key="frame" x="65" y="451.33333333333331" width="263.33333333333331" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcF-09-la0">
                                                 <rect key="frame" x="0.0" y="5" width="178.66666666666666" height="20.333333333333332"/>
@@ -108,17 +108,23 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0z-JF-h2n">
-                                                <rect key="frame" x="193.66666666666666" y="0.0" width="99.333333333333343" height="30"/>
+                                                <rect key="frame" x="178.66666666666666" y="-2" width="84.666666666666657" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Sign UP">
                                                     <color key="baseForegroundColor" name="AccentColor"/>
                                                 </buttonConfiguration>
                                             </button>
                                         </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Nht-gX-Gaj"/>
+                                            <constraint firstItem="DcF-09-la0" firstAttribute="leading" secondItem="GZx-dS-Mdl" secondAttribute="leading" id="0bH-j0-QEr"/>
+                                            <constraint firstItem="DcF-09-la0" firstAttribute="centerY" secondItem="GZx-dS-Mdl" secondAttribute="centerY" id="1yC-Ua-eci"/>
+                                            <constraint firstItem="s0z-JF-h2n" firstAttribute="leading" secondItem="DcF-09-la0" secondAttribute="trailing" id="Rob-je-e8E"/>
+                                            <constraint firstAttribute="trailing" secondItem="s0z-JF-h2n" secondAttribute="trailing" id="Z9X-V7-Sw8"/>
+                                            <constraint firstAttribute="height" constant="30" id="e23-RG-kIO"/>
+                                            <constraint firstItem="s0z-JF-h2n" firstAttribute="centerY" secondItem="GZx-dS-Mdl" secondAttribute="centerY" id="iQC-8W-NPM"/>
                                         </constraints>
-                                    </stackView>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" systemColor="systemGray6Color"/>
@@ -133,14 +139,13 @@
                                     <constraint firstItem="26U-ax-1UT" firstAttribute="leading" secondItem="vkS-Oz-7x3" secondAttribute="leading" constant="30" id="Lak-p2-bs0"/>
                                     <constraint firstAttribute="trailing" secondItem="YoK-QT-mKV" secondAttribute="trailing" constant="30" id="PhZ-cd-MSs"/>
                                     <constraint firstItem="H2L-lw-OVz" firstAttribute="leading" secondItem="vkS-Oz-7x3" secondAttribute="leading" constant="20" id="QUY-GG-i1p"/>
-                                    <constraint firstItem="gB7-bV-r7M" firstAttribute="leading" secondItem="vkS-Oz-7x3" secondAttribute="leading" constant="50" id="T6P-Vu-wlR"/>
                                     <constraint firstAttribute="trailing" secondItem="26U-ax-1UT" secondAttribute="trailing" constant="30" id="Zgo-Se-svh"/>
                                     <constraint firstItem="H2L-lw-OVz" firstAttribute="top" secondItem="ZQ1-tH-g3t" secondAttribute="bottom" constant="30" id="cdj-vb-WNa"/>
                                     <constraint firstItem="26U-ax-1UT" firstAttribute="top" secondItem="H2L-lw-OVz" secondAttribute="bottom" constant="30" id="dwf-dM-LPz"/>
+                                    <constraint firstItem="GZx-dS-Mdl" firstAttribute="centerX" secondItem="vkS-Oz-7x3" secondAttribute="centerX" id="fEP-kP-lRO"/>
                                     <constraint firstItem="nlk-CX-awj" firstAttribute="leading" secondItem="vkS-Oz-7x3" secondAttribute="leading" constant="30" id="fZC-1I-Gcw"/>
-                                    <constraint firstAttribute="bottom" secondItem="gB7-bV-r7M" secondAttribute="bottom" constant="30" id="k4K-qH-xk6"/>
                                     <constraint firstItem="YoK-QT-mKV" firstAttribute="top" secondItem="26U-ax-1UT" secondAttribute="bottom" constant="30" id="kR5-Uq-oaH"/>
-                                    <constraint firstAttribute="trailing" secondItem="gB7-bV-r7M" secondAttribute="trailing" constant="50" id="xpP-PQ-KaI"/>
+                                    <constraint firstAttribute="bottom" secondItem="GZx-dS-Mdl" secondAttribute="bottom" constant="30" id="wML-fi-W9l"/>
                                 </constraints>
                             </view>
                         </subviews>

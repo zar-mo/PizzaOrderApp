@@ -14,30 +14,30 @@ enum TemporaryErrorType: Error {
 
 protocol UserDefaultStorageProtocol {
     
-    associatedtype object: Codable
-   
-    func save(object: object, key: String) throws
     
-    func load(objectType: object.Type, key: String) throws -> object
+   
+    func save<T: Codable>(object: T, key: String) throws
+    
+    func load<T: Codable>(objectType: T.Type, key: String) throws -> T
     
     func remove(key: String)
    
 }
 
-class CredentialStorage<T: Credential>: UserDefaultStorageProtocol {
-    typealias object = T
+class CredentialStorage: UserDefaultStorageProtocol {
+   
 }
 
 
 // MARK: default implementations of save and load methods
 extension UserDefaultStorageProtocol {
     
-    func save(object: object, key: String) throws  {
+    func save<T: Codable>(object: T, key: String) throws  {
         let jsonData = try JSONEncoder().encode(object)
         UserDefaults.standard.setValue(jsonData, forKey: key)
     }
     
-    func load(objectType: object.Type, key: String) throws -> object {
+    func load<T: Codable>(objectType: T.Type, key: String) throws -> T {
         guard let jsonData = UserDefaults.standard.data(forKey: key),
               let decodedObject = try? JSONDecoder().decode(objectType, from: jsonData) else {
             throw TemporaryErrorType.dataNotFound
