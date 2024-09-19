@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0jQ-tf-5OS">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,6 +10,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--SplashVC-->
+        <scene sceneID="wjy-By-lvo">
+            <objects>
+                <viewController storyboardIdentifier="SplashScreen" id="0jQ-tf-5OS" customClass="SplashVC" customModule="PizzaOrderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XUS-Nr-GP4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7R-ba-NWn">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" highlightedImage="icon" translatesAutoresizingMaskIntoConstraints="NO" id="1em-ZC-OsO">
+                                        <rect key="frame" x="0.0" y="229.66666666666663" width="393" height="393"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="1em-ZC-OsO" secondAttribute="height" multiplier="1:1" id="OG8-ap-5gd"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.50181370970000005" blue="0.0019795673430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="1em-ZC-OsO" firstAttribute="leading" secondItem="p7R-ba-NWn" secondAttribute="leading" id="c6t-hR-ZsD"/>
+                                    <constraint firstAttribute="trailing" secondItem="1em-ZC-OsO" secondAttribute="trailing" id="j9x-72-0fq"/>
+                                    <constraint firstItem="1em-ZC-OsO" firstAttribute="centerY" secondItem="p7R-ba-NWn" secondAttribute="centerY" id="tcL-Zi-Zqo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="F2z-Ue-8Ml"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p7R-ba-NWn" firstAttribute="top" secondItem="XUS-Nr-GP4" secondAttribute="top" id="8DC-K8-FdL"/>
+                            <constraint firstItem="p7R-ba-NWn" firstAttribute="leading" secondItem="XUS-Nr-GP4" secondAttribute="leading" id="al3-1I-nOo"/>
+                            <constraint firstAttribute="bottom" secondItem="p7R-ba-NWn" secondAttribute="bottom" id="mQZ-06-2ab"/>
+                            <constraint firstAttribute="trailing" secondItem="p7R-ba-NWn" secondAttribute="trailing" id="rdw-pQ-Ucd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0d-FV-SDr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-773.28244274809163" y="-16.197183098591552"/>
+        </scene>
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -88,6 +128,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign in"/>
+                                        <connections>
+                                            <action selector="SignInButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YKs-dv-ke1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlk-CX-awj">
                                         <rect key="frame" x="30" y="324.99999999999994" width="333" height="25"/>
@@ -97,6 +140,9 @@
                                         <color key="tintColor" name="AccentColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot your password?"/>
+                                        <connections>
+                                            <action selector="forgetPassButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Wn-25-EdR"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZx-dS-Mdl" userLabel="signUp container">
                                         <rect key="frame" x="65" y="451.33333333333331" width="263.33333333333331" height="30"/>
@@ -113,6 +159,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Sign UP">
                                                     <color key="baseForegroundColor" name="AccentColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IMa-9v-v49"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -163,7 +212,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="SignInButton" destination="YoK-QT-mKV" id="mRm-7n-nUO"/>
                         <outlet property="loginContainer" destination="vkS-Oz-7x3" id="V2d-O7-Eie"/>
+                        <outlet property="passwordTextField" destination="Ga1-ai-N4N" id="U7m-aZ-vvQ"/>
+                        <outlet property="phoneTextfield" destination="eaR-tV-fpX" id="8mj-Y9-aab"/>
                         <outlet property="welcomeImageView" destination="vug-yI-caK" id="xBX-Tt-D0q"/>
                     </connections>
                 </viewController>
@@ -173,6 +225,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon" width="512" height="512"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

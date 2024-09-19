@@ -10,6 +10,9 @@ import UIKit
 class SignInViewController: UIViewController {
 
 
+    @IBOutlet weak var SignInButton: UIButton!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var phoneTextfield: UITextField!
     @IBOutlet weak var welcomeImageView: UIImageView! {
         
         didSet {
@@ -29,6 +32,12 @@ class SignInViewController: UIViewController {
 
     }
     
-
+    @IBAction func signUpButton(_ sender: UIButton) {
+    }
+    @IBAction func forgetPassButton(_ sender: UIButton) {
+    }
+    @IBAction func SignInButtonAction(_ sender: UIButton) {
+    }
+    
 
 }

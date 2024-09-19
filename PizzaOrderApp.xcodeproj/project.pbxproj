@@ -10,9 +10,10 @@
 		C9105F852C9BC7D8007777D5 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9105F842C9BC7D8007777D5 /* Credential.swift */; };
 		C9105F892C9BCBC9007777D5 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9105F882C9BCBC9007777D5 /* UserDefaultStorage.swift */; };
 		C9105F8B2C9BD778007777D5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9105F8A2C9BD778007777D5 /* AuthService.swift */; };
+		C9105FCD2C9CB96D007777D5 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9105FCC2C9CB96D007777D5 /* SplashVC.swift */; };
 		C9AC155E2C9B5CCF008EA485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC155D2C9B5CCF008EA485 /* AppDelegate.swift */; };
 		C9AC15602C9B5CCF008EA485 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC155F2C9B5CCF008EA485 /* SceneDelegate.swift */; };
-		C9AC15622C9B5CCF008EA485 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC15612C9B5CCF008EA485 /* ViewController.swift */; };
+		C9AC15622C9B5CCF008EA485 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC15612C9B5CCF008EA485 /* SignInVC.swift */; };
 		C9AC15652C9B5CCF008EA485 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C9AC15642C9B5CCF008EA485 /* Base */; };
 		C9AC15672C9B5CD1008EA485 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AC15662C9B5CD1008EA485 /* Assets.xcassets */; };
 		C9AC156A2C9B5CD1008EA485 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C9AC15692C9B5CD1008EA485 /* Base */; };
@@ -23,10 +24,11 @@
 		C9105F842C9BC7D8007777D5 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
 		C9105F882C9BCBC9007777D5 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
 		C9105F8A2C9BD778007777D5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		C9105FCC2C9CB96D007777D5 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		C9AC155A2C9B5CCF008EA485 /* PizzaOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AC155D2C9B5CCF008EA485 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9AC155F2C9B5CCF008EA485 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C9AC15612C9B5CCF008EA485 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C9AC15612C9B5CCF008EA485 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		C9AC15642C9B5CCF008EA485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9AC15662C9B5CD1008EA485 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9AC15692C9B5CD1008EA485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,7 +94,8 @@
 				C9AC155D2C9B5CCF008EA485 /* AppDelegate.swift */,
 				C9AC15712C9B78C8008EA485 /* SignInViewController.swift */,
 				C9AC155F2C9B5CCF008EA485 /* SceneDelegate.swift */,
-				C9AC15612C9B5CCF008EA485 /* ViewController.swift */,
+				C9105FCC2C9CB96D007777D5 /* SplashVC.swift */,
+				C9AC15612C9B5CCF008EA485 /* SignInVC.swift */,
 				C9105F862C9BCB91007777D5 /* Services */,
 				C9105F832C9BC7B2007777D5 /* DataModels */,
 				C9AC15632C9B5CCF008EA485 /* Main.storyboard */,
@@ -176,9 +179,10 @@
 			files = (
 				C9105F892C9BCBC9007777D5 /* UserDefaultStorage.swift in Sources */,
 				C9AC15722C9B78C8008EA485 /* SignInViewController.swift in Sources */,
-				C9AC15622C9B5CCF008EA485 /* ViewController.swift in Sources */,
+				C9AC15622C9B5CCF008EA485 /* SignInVC.swift in Sources */,
 				C9105F852C9BC7D8007777D5 /* Credential.swift in Sources */,
 				C9AC155E2C9B5CCF008EA485 /* AppDelegate.swift in Sources */,
+				C9105FCD2C9CB96D007777D5 /* SplashVC.swift in Sources */,
 				C9AC15602C9B5CCF008EA485 /* SceneDelegate.swift in Sources */,
 				C9105F8B2C9BD778007777D5 /* AuthService.swift in Sources */,
 			);
