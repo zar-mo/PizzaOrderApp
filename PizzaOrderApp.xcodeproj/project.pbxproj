@@ -17,6 +17,13 @@
 		C9105FD82C9D0BF3007777D5 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9105FD72C9D0BF3007777D5 /* SignUpViewModel.swift */; };
 		C9105FDB2C9D15D9007777D5 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9105FDA2C9D15D9007777D5 /* UIViewController+.swift */; };
 		C9105FDD2C9D1CEE007777D5 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9105FDC2C9D1CEE007777D5 /* SignUpVC.swift */; };
+		C9105FDF2C9DD6A8007777D5 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9105FDE2C9DD6A8007777D5 /* HomeViewCell.swift */; };
+		C910602F2C9DFFEE007777D5 /* HomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910602E2C9DFFEE007777D5 /* HomeCellViewModel.swift */; };
+		C91060322C9E012A007777D5 /* FoodGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91060312C9E012A007777D5 /* FoodGroup.swift */; };
+		C91060342C9E0163007777D5 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91060332C9E0163007777D5 /* FoodItem.swift */; };
+		C91060362C9E055F007777D5 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91060352C9E055F007777D5 /* APIRequest.swift */; };
+		C91060382C9E05A1007777D5 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91060372C9E05A1007777D5 /* APIClient.swift */; };
+		C910603F2C9E0C74007777D5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910603E2C9E0C74007777D5 /* Constants.swift */; };
 		C9AC155E2C9B5CCF008EA485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC155D2C9B5CCF008EA485 /* AppDelegate.swift */; };
 		C9AC15602C9B5CCF008EA485 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC155F2C9B5CCF008EA485 /* SceneDelegate.swift */; };
 		C9AC15652C9B5CCF008EA485 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C9AC15642C9B5CCF008EA485 /* Base */; };
@@ -36,6 +43,13 @@
 		C9105FD72C9D0BF3007777D5 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		C9105FDA2C9D15D9007777D5 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		C9105FDC2C9D1CEE007777D5 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		C9105FDE2C9DD6A8007777D5 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		C910602E2C9DFFEE007777D5 /* HomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewModel.swift; sourceTree = "<group>"; };
+		C91060312C9E012A007777D5 /* FoodGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodGroup.swift; sourceTree = "<group>"; };
+		C91060332C9E0163007777D5 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
+		C91060352C9E055F007777D5 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		C91060372C9E05A1007777D5 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		C910603E2C9E0C74007777D5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C9AC155A2C9B5CCF008EA485 /* PizzaOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AC155D2C9B5CCF008EA485 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9AC155F2C9B5CCF008EA485 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				C9105F842C9BC7D8007777D5 /* Credential.swift */,
+				C91060312C9E012A007777D5 /* FoodGroup.swift */,
+				C91060332C9E0163007777D5 /* FoodItem.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -78,6 +94,8 @@
 			children = (
 				C9105F882C9BCBC9007777D5 /* UserDefaultStorage.swift */,
 				C9105F8A2C9BD778007777D5 /* AuthService.swift */,
+				C91060352C9E055F007777D5 /* APIRequest.swift */,
+				C91060372C9E05A1007777D5 /* APIClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -85,6 +103,7 @@
 		C9105FCE2C9CDBC7007777D5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C910602D2C9DFFC6007777D5 /* Cell */,
 				C9105FCF2C9CDC07007777D5 /* HomeViewVC.swift */,
 				C9105FD42C9D0BB7007777D5 /* HomeViewModel.swift */,
 			);
@@ -112,9 +131,27 @@
 		C9105FD92C9D15BB007777D5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C910603D2C9E0C58007777D5 /* Constants */,
 				C9105FDA2C9D15D9007777D5 /* UIViewController+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C910602D2C9DFFC6007777D5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C9105FDE2C9DD6A8007777D5 /* HomeViewCell.swift */,
+				C910602E2C9DFFEE007777D5 /* HomeCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C910603D2C9E0C58007777D5 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C910603E2C9E0C74007777D5 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		C9AC15512C9B5CCF008EA485 = {
@@ -224,19 +261,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91060342C9E0163007777D5 /* FoodItem.swift in Sources */,
 				C9105FD02C9CDC07007777D5 /* HomeViewVC.swift in Sources */,
 				C9105F892C9BCBC9007777D5 /* UserDefaultStorage.swift in Sources */,
 				C9105FDB2C9D15D9007777D5 /* UIViewController+.swift in Sources */,
 				C9AC15722C9B78C8008EA485 /* SignInViewController.swift in Sources */,
 				C9105FD52C9D0BB7007777D5 /* HomeViewModel.swift in Sources */,
+				C91060382C9E05A1007777D5 /* APIClient.swift in Sources */,
 				C9105F852C9BC7D8007777D5 /* Credential.swift in Sources */,
 				C9AC155E2C9B5CCF008EA485 /* AppDelegate.swift in Sources */,
 				C9105FD32C9D0AFE007777D5 /* SignInViewModel.swift in Sources */,
 				C9105FCD2C9CB96D007777D5 /* SplashVC.swift in Sources */,
+				C9105FDF2C9DD6A8007777D5 /* HomeViewCell.swift in Sources */,
 				C9AC15602C9B5CCF008EA485 /* SceneDelegate.swift in Sources */,
 				C9105FDD2C9D1CEE007777D5 /* SignUpVC.swift in Sources */,
+				C910602F2C9DFFEE007777D5 /* HomeCellViewModel.swift in Sources */,
+				C910603F2C9E0C74007777D5 /* Constants.swift in Sources */,
 				C9105FD82C9D0BF3007777D5 /* SignUpViewModel.swift in Sources */,
 				C9105F8B2C9BD778007777D5 /* AuthService.swift in Sources */,
+				C91060362C9E055F007777D5 /* APIRequest.swift in Sources */,
+				C91060322C9E012A007777D5 /* FoodGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

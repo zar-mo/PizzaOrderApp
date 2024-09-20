@@ -23,7 +23,6 @@ class SplashVC: UIViewController {
 extension SplashVC {
     
     func checkAuth() {
-        navigateToSignInView()
         
         Task {
             do {
@@ -39,8 +38,10 @@ extension SplashVC {
     
     func navigateToHomeView(with user: PhoneCredential) {
         
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewVC") as? HomeViewVC else{ return}
+        let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewVC")
+        print("navigation to home called")
         navigationController?.setViewControllers([homeViewController], animated: true)
         
     }
@@ -52,6 +53,7 @@ extension SplashVC {
         if let authService = authService{
             signInViewController.viewModel = SignInViewModelImpl(authService: authService)
         }
+        print("navigation to sign in called")
         navigationController?.setViewControllers([signInViewController], animated: true)
         
     }
