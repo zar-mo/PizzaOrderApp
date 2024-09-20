@@ -54,7 +54,7 @@ class SignInViewModelImpl: SignInViewModel {
     
     func signUpViewModel() ->  SignUpViewModel {
         
-        return SignUpViewModelImpl()
+        return SignUpViewModelImpl(authService: AuthService(credentialStorage: CredentialStorage()))
     }
     
 }

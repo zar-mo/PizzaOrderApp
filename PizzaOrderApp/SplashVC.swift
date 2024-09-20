@@ -49,6 +49,9 @@ extension SplashVC {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewVC") as? SignInViewController else{ return}
+        if let authService = authService{
+            signInViewController.viewModel = SignInViewModelImpl(authService: authService)
+        }
         navigationController?.setViewControllers([signInViewController], animated: true)
         
     }

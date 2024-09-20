@@ -50,6 +50,7 @@ class SignInViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let signUpViewController = segue.destination as? SignUpVC
+        signUpViewController?.viewModel = viewModel?.signUpViewModel()
     }
     
 }
