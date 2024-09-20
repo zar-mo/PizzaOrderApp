@@ -49,7 +49,7 @@ class AuthService: AuthServiceProtocol {
         do{
             let currentUser = PhoneCredential(identifier: identifier, password: password, type: .phonePassword)
             try credentialStorage.save(object: currentUser, key: "currentUser")
-            try credentialStorage.save(object: identifier, key: password)
+            try credentialStorage.save(object: password, key: identifier)
         }
        
     }

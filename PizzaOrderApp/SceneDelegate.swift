@@ -11,14 +11,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+  
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
        
-        let navigationController = window?.rootViewController?.navigationController
+        let navigationController = window?.rootViewController as? UINavigationController
         let splashViewController = navigationController?.viewControllers.first as? SplashVC
-        
         let authService = AuthService(credentialStorage: CredentialStorage())
         splashViewController?.authService = authService
+        print(splashViewController)
+
+
+        
+        //let splashViewController = navigationController?.viewControllers.first as? SplashVC
+//
+//        let authService = AuthService(credentialStorage: CredentialStorage())
+//        splashViewController?.authService = authService
+        
+        
+//        if let splashViewController = window?.rootViewController as? SplashVC {
+//                let authService = AuthService(credentialStorage: CredentialStorage())
+//                splashViewController.authService = authService
+//
+//            }
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }

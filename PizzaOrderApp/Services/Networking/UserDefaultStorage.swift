@@ -13,13 +13,9 @@ enum TemporaryErrorType: Error {
 }
 
 protocol UserDefaultStorageProtocol {
-    
-    
-   
+
     func save<T: Codable>(object: T, key: String) throws
-    
     func load<T: Codable>(objectType: T.Type, key: String) throws -> T
-    
     func remove(key: String)
    
 }
