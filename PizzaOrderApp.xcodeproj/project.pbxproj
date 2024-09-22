@@ -34,6 +34,7 @@
 		C91060542C9FD2D3007777D5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91060532C9FD2D3007777D5 /* MenuViewController.swift */; };
 		C91060562C9FD2F5007777D5 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91060552C9FD2F5007777D5 /* OrderViewController.swift */; };
 		C91060582C9FDCD9007777D5 /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91060572C9FDCD9007777D5 /* MenuViewCell.swift */; };
+		C910605B2C9FE7A3007777D5 /* ingredientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910605A2C9FE7A3007777D5 /* ingredientsViewModel.swift */; };
 		C9AC155E2C9B5CCF008EA485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC155D2C9B5CCF008EA485 /* AppDelegate.swift */; };
 		C9AC15602C9B5CCF008EA485 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC155F2C9B5CCF008EA485 /* SceneDelegate.swift */; };
 		C9AC15652C9B5CCF008EA485 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C9AC15642C9B5CCF008EA485 /* Base */; };
@@ -69,6 +70,7 @@
 		C91060532C9FD2D3007777D5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C91060552C9FD2F5007777D5 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		C91060572C9FDCD9007777D5 /* MenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
+		C910605A2C9FE7A3007777D5 /* ingredientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ingredientsViewModel.swift; sourceTree = "<group>"; };
 		C9AC155A2C9B5CCF008EA485 /* PizzaOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AC155D2C9B5CCF008EA485 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9AC155F2C9B5CCF008EA485 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,8 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				C91060532C9FD2D3007777D5 /* MenuViewController.swift */,
-				C910604A2C9FC757007777D5 /* Cell */,
 				C910604B2C9FC778007777D5 /* MenuViewModel.swift */,
+				C910604A2C9FC757007777D5 /* Cell */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -212,6 +214,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C91060592C9FE78B007777D5 /* Ingredients */ = {
+			isa = PBXGroup;
+			children = (
+				C910605A2C9FE7A3007777D5 /* ingredientsViewModel.swift */,
+			);
+			path = Ingredients;
+			sourceTree = "<group>";
+		};
 		C9AC15512C9B5CCF008EA485 = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				C9AC155D2C9B5CCF008EA485 /* AppDelegate.swift */,
+				C91060592C9FE78B007777D5 /* Ingredients */,
 				C9AC155F2C9B5CCF008EA485 /* SceneDelegate.swift */,
 				C910603D2C9E0C58007777D5 /* Constants */,
 				C91060492C9FC72B007777D5 /* Menu */,
@@ -343,6 +354,7 @@
 				C9105FCD2C9CB96D007777D5 /* SplashVC.swift in Sources */,
 				C9105FDF2C9DD6A8007777D5 /* HomeViewCell.swift in Sources */,
 				C91060502C9FC83D007777D5 /* OrderViewModel.swift in Sources */,
+				C910605B2C9FE7A3007777D5 /* ingredientsViewModel.swift in Sources */,
 				C9AC15602C9B5CCF008EA485 /* SceneDelegate.swift in Sources */,
 				C91060482C9FBAAA007777D5 /* OrderItem.swift in Sources */,
 				C91060462C9FB8B7007777D5 /* MenuCellViewModel.swift in Sources */,

@@ -23,3 +23,16 @@ protocol OrdersManager {
     func observe(_ observer: Any, selector: Selector)
     
 }
+
+protocol MenuCellViewModel{
+    
+}
+
+class MenuCellViewModelImpl : MenuCellViewModel {
+    
+    let foodItem: FoodItem
+    
+    init(foodItem: FoodItem) {
+        self.foodItem = foodItem
+    }
+}

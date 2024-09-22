@@ -9,6 +9,8 @@ import UIKit
 
 class MenuViewCell: UITableViewCell {
 
+    var viewModel: MenuCellViewModel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

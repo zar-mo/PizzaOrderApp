@@ -20,10 +20,7 @@ protocol HomeViewModel {
 }
 
 class HomeViewModelImpl: HomeViewModel {
-    
-    
-
-    
+ 
     var cartAmount: String { "\(ordersManager?.cartAmount ?? 0)"}
     
     
@@ -79,7 +76,7 @@ class HomeViewModelImpl: HomeViewModel {
     }
     
     func menuViewModel(for indexPath: IndexPath) -> any MenuViewModel {
-        return MenuViewModelImpl()
+        return MenuViewModelImpl(foodGroup: foodGroups[indexPath.row])
     }
     
     func orderViewModel() -> any OrderViewModel {

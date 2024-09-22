@@ -268,7 +268,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pizza" id="1Yf-xF-A8W">
-                        <barButtonItem key="rightBarButtonItem" title="cart" image="cart" catalog="system" id="IBk-rE-4CI"/>
+                        <barButtonItem key="rightBarButtonItem" title="cart" image="cart" catalog="system" id="IBk-rE-4CI">
+                            <connections>
+                                <segue destination="QX1-cs-lCn" kind="show" identifier="ShowOrderFromMenu" id="WBR-cE-Nd9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="d2Y-Hj-2ol" id="hru-nn-xN3"/>
@@ -571,6 +575,9 @@
             <point key="canvasLocation" x="-773.28244274809163" y="-16.197183098591552"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WBR-cE-Nd9"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="icon" width="512" height="512"/>

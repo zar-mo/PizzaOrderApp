@@ -38,7 +38,7 @@ class HomeViewVC: UIViewController {
           
         }else if let indexPath = sender as? IndexPath, segue.identifier == "ShowMenu" {
             let menuViewController = segue.destination as? MenuViewController
-            //menuViewController?.viewModel = viewModel.menuViewModel()
+            menuViewController?.viewModel = viewModel.menuViewModel(for: indexPath)
         }
     }
 
