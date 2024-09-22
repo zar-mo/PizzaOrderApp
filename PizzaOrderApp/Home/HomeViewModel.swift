@@ -6,19 +6,33 @@
 //
 
 import Foundation
+import UIKit
 
 protocol HomeViewModel {
     
-    
-    var onUpdate: ((HomeViewModel) -> Void)? {get set}
+    var cartAmount: String { get }
+    var foodCount: Int { get }
+    var onUpdate: ((HomeViewModel) -> Void)? { get set }
     func cellViewModel(at indexPath: IndexPath) -> HomeCellViewModel
+    func menuViewModel(for indexPath: IndexPath) -> MenuViewModel
+    func orderViewModel() -> OrderViewModel
     
 }
 
 class HomeViewModelImpl: HomeViewModel {
     
+    
+
+    
+    var cartAmount: String { "\(ordersManager?.cartAmount ?? 0)"}
+    
+    
     private var foodGroups: [FoodGroup] = [] {
         didSet {onUpdate?(self)}
+    }
+    
+    var foodCount: Int {
+        foodGroups.count
     }
     
     var error: Error? {
@@ -31,22 +45,51 @@ class HomeViewModelImpl: HomeViewModel {
             onUpdate?(self)
         }
     }
-
+    
+    private let ordersManager: OrdersManager?
+    
+    init() {
+        
+        self.ordersManager = UIApplication.shared.sceneDelegate?.ordersRepository
+        self.ordersManager?.observe(self, selector: #selector(ordersListDidChange))
+        
+        obtainData()
+        
+    }
+    
     
     func cellViewModel(at indexPath: IndexPath) -> any HomeCellViewModel {
         HomeCellViewModelImpl(foodGroup: foodGroups[indexPath.row])
     }
     
-    private func obtainData() async throws{
+    private func obtainData() {
         
-        let apiClient = APIClient(apiEndpoint: URL(string: Constants.foodBaseUrl.rawValue))
-        let request = FoodRequest(path: Constants.foodPath.rawValue)
-        do{
-            foodGroups = try await apiClient.fetchData(request)
-        }catch {
-            self.error = error
+        Task{
+            
+            let apiClient = APIClient(apiEndpoint: URL(string: Constants.foodBaseUrl.rawValue))
+            let request = FoodRequest(path: Constants.foodPath.rawValue)
+            do{
+                foodGroups = try await apiClient.fetchData(request).foodGroups
+                
+            }catch {
+                self.error = error
+                print(error)
+            }
         }
     }
+    
+    func menuViewModel(for indexPath: IndexPath) -> any MenuViewModel {
+        return MenuViewModelImpl()
+    }
+    
+    func orderViewModel() -> any OrderViewModel {
+        return OrderViewModelImpl()
+    }
+    
+    @objc private func ordersListDidChange() {
+        onUpdate?(self)
+    }
+    
     
     
     

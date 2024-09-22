@@ -51,6 +51,31 @@
             </objects>
             <point key="canvasLocation" x="153.43511450381678" y="-16.197183098591552"/>
         </scene>
+        <!--Order View Controller-->
+        <scene sceneID="PjP-gu-JTe">
+            <objects>
+                <viewController id="QX1-cs-lCn" customClass="OrderViewController" customModule="PizzaOrderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FJm-CO-6Io">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJP-ZZ-QCh">
+                                <rect key="frame" x="175" y="362" width="41" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zP6-lt-cCT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ity-4A-ZqL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSa-u6-QBp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073" y="736"/>
+        </scene>
         <!--Food-->
         <scene sceneID="HRB-KS-Cca">
             <objects>
@@ -63,27 +88,27 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeViewCell" rowHeight="153" id="dhu-JF-T3P" customClass="HomeViewCell" customModule="PizzaOrderApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HomeViewCell" rowHeight="153" id="dhu-JF-T3P" customClass="HomeViewCell" customModule="PizzaOrderApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dhu-JF-T3P" id="M84-Cd-iPD">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="153"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="153"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza3" translatesAutoresizingMaskIntoConstraints="NO" id="6wI-3R-DQl">
-                                                    <rect key="frame" x="40" y="31" width="118" height="91"/>
+                                                    <rect key="frame" x="40.000000000000007" y="31" width="72.666666666666686" height="91"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="6wI-3R-DQl" secondAttribute="height" multiplier="1:1" id="fPy-Sg-KC0"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLm-bP-N9U" userLabel="Title">
-                                                    <rect key="frame" x="178" y="30.999999999999996" width="175" height="40.666666666666657"/>
+                                                    <rect key="frame" x="132.66666666666666" y="30.999999999999996" width="201.99999999999997" height="40.666666666666657"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try pizza cooked in a woodfire oven" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ch0-bI-P9I" userLabel="Subtitle">
-                                                    <rect key="frame" x="178" y="81.666666666666671" width="175" height="38.333333333333329"/>
+                                                    <rect key="frame" x="132.66666666666666" y="81.666666666666671" width="201.99999999999997" height="38.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -98,11 +123,16 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="6wI-3R-DQl" secondAttribute="bottom" constant="20" id="Rpq-fe-k8V"/>
                                                 <constraint firstItem="6wI-3R-DQl" firstAttribute="leading" secondItem="M84-Cd-iPD" secondAttribute="leadingMargin" constant="20" id="Tsp-zx-jMN"/>
                                                 <constraint firstItem="dLm-bP-N9U" firstAttribute="leading" secondItem="6wI-3R-DQl" secondAttribute="trailing" constant="20" id="ZH0-Vd-7RS"/>
-                                                <constraint firstItem="6wI-3R-DQl" firstAttribute="width" secondItem="M84-Cd-iPD" secondAttribute="width" multiplier="0.3" id="czb-ht-um3"/>
+                                                <constraint firstItem="6wI-3R-DQl" firstAttribute="width" secondItem="M84-Cd-iPD" secondAttribute="width" multiplier="0.2" id="czb-ht-um3"/>
                                                 <constraint firstItem="ch0-bI-P9I" firstAttribute="leading" secondItem="6wI-3R-DQl" secondAttribute="trailing" constant="20" id="hSl-RG-zhP"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="6wI-3R-DQl" secondAttribute="bottom" constant="20" id="qD5-HM-Atm"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="foodImageView" destination="6wI-3R-DQl" id="7gZ-58-pG6"/>
+                                            <outlet property="foodSubTitleLabel" destination="ch0-bI-P9I" id="MGt-Cd-xiA"/>
+                                            <outlet property="foodTitleLabel" destination="dLm-bP-N9U" id="Zj3-Ez-6SE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -118,16 +148,135 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Food" id="6T2-Kn-Ien">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="lt9-It-EI6" userLabel="Cart Button"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="lt9-It-EI6" userLabel="Cart Button">
+                            <connections>
+                                <segue destination="QX1-cs-lCn" kind="show" identifier="ShowOrder" id="YTj-pT-6Bf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="iq0-xB-2v5" id="en3-fO-lkO"/>
+                        <segue destination="L4i-4h-ezL" kind="show" identifier="ShowMenu" id="AIm-m6-646"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcx-95-bYE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1072.5190839694656" y="-9.1549295774647899"/>
+        </scene>
+        <!--Pizza-->
+        <scene sceneID="v3Z-j7-7YH">
+            <objects>
+                <viewController id="L4i-4h-ezL" customClass="MenuViewController" customModule="PizzaOrderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FeY-Xp-0xT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d2Y-Hj-2ol">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="129" id="p1f-7K-JMx" userLabel="MenuCell" customClass="MenuViewCell" customModule="PizzaOrderApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="129"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p1f-7K-JMx" id="wB3-mr-EzC">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="129"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza2" translatesAutoresizingMaskIntoConstraints="NO" id="3HD-cr-xW9">
+                                                    <rect key="frame" x="35.000000000000007" y="26" width="78.666666666666686" height="77"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="3HD-cr-xW9" secondAttribute="height" multiplier="1:1" id="L86-q9-5O8"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBG-l4-hcV" userLabel="Favorite Button">
+                                                    <rect key="frame" x="348" y="15" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="Hx6-XA-0I1"/>
+                                                        <constraint firstAttribute="height" constant="30" id="I6O-JB-sQl"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Margaritta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CM-LW-z24" userLabel="Title">
+                                                    <rect key="frame" x="123.66666666666667" y="26" width="214.33333333333331" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tomato, mozarella, tomato, mozarella, tomato, mozarella, tomato, mozarella, " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLk-IE-XYC" userLabel="Subtitle">
+                                                    <rect key="frame" x="123.66666666666667" y="52" width="234.33333333333331" height="33.666666666666657"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHd-gf-wVf" userLabel="Add Button">
+                                                    <rect key="frame" x="293" y="79" width="95" height="35"/>
+                                                    <color key="backgroundColor" systemColor="linkColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="95" id="1mg-fq-3eb"/>
+                                                    </constraints>
+                                                    <color key="tintColor" name="Background"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system" title="Add" imagePadding="2"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="450 g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5n-72-zLm" userLabel="Weight Label">
+                                                    <rect key="frame" x="123.66666666666669" y="82" width="46" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 18.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwK-FM-EdU">
+                                                    <rect key="frame" x="231" y="82" width="57" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8CM-LW-z24" firstAttribute="top" secondItem="wB3-mr-EzC" secondAttribute="topMargin" constant="15" id="4Aj-qV-SwZ"/>
+                                                <constraint firstItem="sBG-l4-hcV" firstAttribute="top" secondItem="wB3-mr-EzC" secondAttribute="top" constant="15" id="8cd-uk-tdk"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3HD-cr-xW9" secondAttribute="bottom" constant="15" id="DUv-ay-BKF"/>
+                                                <constraint firstItem="sBG-l4-hcV" firstAttribute="leading" secondItem="8CM-LW-z24" secondAttribute="trailing" constant="10" id="DhW-ia-pga"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PLk-IE-XYC" secondAttribute="trailing" constant="15" id="DsU-Ff-Ch5"/>
+                                                <constraint firstItem="MHd-gf-wVf" firstAttribute="leading" secondItem="nwK-FM-EdU" secondAttribute="trailing" constant="5" id="FMc-S6-g0v"/>
+                                                <constraint firstItem="3HD-cr-xW9" firstAttribute="leading" secondItem="wB3-mr-EzC" secondAttribute="leadingMargin" constant="15" id="GkJ-Rv-KaS"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="r5n-72-zLm" secondAttribute="bottom" constant="15" id="Jh7-rD-PgV"/>
+                                                <constraint firstItem="PLk-IE-XYC" firstAttribute="top" secondItem="8CM-LW-z24" secondAttribute="bottom" constant="3" id="OOf-eW-aVa"/>
+                                                <constraint firstAttribute="bottom" secondItem="MHd-gf-wVf" secondAttribute="bottom" constant="15" id="Urt-NV-Vgw"/>
+                                                <constraint firstAttribute="trailing" secondItem="sBG-l4-hcV" secondAttribute="trailing" constant="15" id="YWp-4f-367"/>
+                                                <constraint firstItem="r5n-72-zLm" firstAttribute="leading" secondItem="3HD-cr-xW9" secondAttribute="trailing" constant="10" id="gs5-6g-ceX"/>
+                                                <constraint firstItem="8CM-LW-z24" firstAttribute="leading" secondItem="3HD-cr-xW9" secondAttribute="trailing" constant="10" id="lY7-h0-DUE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nwK-FM-EdU" secondAttribute="bottom" constant="15" id="tqf-ds-Z0Q"/>
+                                                <constraint firstItem="PLk-IE-XYC" firstAttribute="leading" secondItem="3HD-cr-xW9" secondAttribute="trailing" constant="10" id="wHT-hE-zBa"/>
+                                                <constraint firstItem="3HD-cr-xW9" firstAttribute="top" secondItem="wB3-mr-EzC" secondAttribute="topMargin" constant="15" id="wV6-gG-QAp"/>
+                                                <constraint firstItem="MHd-gf-wVf" firstAttribute="trailing" secondItem="wB3-mr-EzC" secondAttribute="trailingMargin" constant="15" id="z48-vq-8cV"/>
+                                                <constraint firstItem="3HD-cr-xW9" firstAttribute="width" secondItem="wB3-mr-EzC" secondAttribute="width" multiplier="0.2" id="zd1-bj-syQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KTH-P3-AI7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KTH-P3-AI7" firstAttribute="bottom" secondItem="d2Y-Hj-2ol" secondAttribute="bottom" id="8rB-pJ-KGI"/>
+                            <constraint firstItem="d2Y-Hj-2ol" firstAttribute="top" secondItem="KTH-P3-AI7" secondAttribute="top" id="Oir-v7-qxT"/>
+                            <constraint firstItem="d2Y-Hj-2ol" firstAttribute="leading" secondItem="KTH-P3-AI7" secondAttribute="leading" id="Zep-w5-Vvs"/>
+                            <constraint firstItem="KTH-P3-AI7" firstAttribute="trailing" secondItem="d2Y-Hj-2ol" secondAttribute="trailing" id="ovR-1o-nSE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pizza" id="1Yf-xF-A8W">
+                        <barButtonItem key="rightBarButtonItem" title="cart" image="cart" catalog="system" id="IBk-rE-4CI"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="d2Y-Hj-2ol" id="hru-nn-xN3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qfo-5F-cra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1933.5877862595419" y="-9.1549295774647899"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -425,13 +574,18 @@
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="icon" width="512" height="512"/>
+        <image name="pizza2" width="1024" height="683"/>
         <image name="pizza3" width="780" height="438"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Background">
             <color red="0.99607843137254903" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

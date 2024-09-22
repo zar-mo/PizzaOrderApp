@@ -70,9 +70,13 @@ extension APIRequest {
 
 struct FoodRequest: APIRequest{
     
-    typealias Response = FoodGroup
+    typealias Response = FoodWrapper
     var path: String
     
+}
+
+struct FoodWrapper: Codable {
+    let foodGroups: [FoodGroup]
 }
 
 

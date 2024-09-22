@@ -11,29 +11,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-  
+    var ordersRepository: OrdersRepository!
+    var favoritesRepository: FavoritesRepository!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
        
         let navigationController = window?.rootViewController as? UINavigationController
         let splashViewController = navigationController?.viewControllers.first as? SplashVC
-        let authService = AuthService(credentialStorage: CredentialStorage())
+        let credentialStorage = CredentialStorage()
+        let authService = AuthService(credentialStorage: credentialStorage)
         splashViewController?.authService = authService
-        print(splashViewController)
+        
+        
+        ordersRepository = OrdersRepository()
+        favoritesRepository = FavoritesRepository()
+        
+        ordersRepository.fetch()
+        favoritesRepository.fetch()
 
-
-        
-        //let splashViewController = navigationController?.viewControllers.first as? SplashVC
-//
-//        let authService = AuthService(credentialStorage: CredentialStorage())
-//        splashViewController?.authService = authService
-        
-        
-//        if let splashViewController = window?.rootViewController as? SplashVC {
-//                let authService = AuthService(credentialStorage: CredentialStorage())
-//                splashViewController.authService = authService
-//
-//            }
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }

@@ -9,6 +9,6 @@ import Foundation
 
 enum Constants: String {
     
-    case foodBaseUrl = ""
-    case foodPath = "i"
+    case foodBaseUrl = "https://raw.githubusercontent.com"
+    case foodPath = "/shobhakartiwari/shobhakar_api_collections/main/FoodData.json"
 }

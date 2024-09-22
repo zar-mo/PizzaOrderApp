@@ -13,6 +13,6 @@ struct FoodItem: Identifiable, Codable {
     let description: String
     let weight: Int
     let price: Int
-    let imageURL: URL?
+    let imageUrl: String?
 }
 
