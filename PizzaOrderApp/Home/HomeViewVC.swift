@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewVC: UIViewController {
     
-    var viewModel: HomeViewModel!
+    var viewModel: HomeViewModel?
         
 
     @IBOutlet weak var tableView: UITableView!
@@ -19,7 +19,7 @@ class HomeViewVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        viewModel.onUpdate = { [weak self] viewModel in
+        viewModel?.onUpdate = { [weak self] viewModel in
             
             print("food loaded")
             DispatchQueue.main.async {
@@ -38,7 +38,7 @@ class HomeViewVC: UIViewController {
           
         }else if let indexPath = sender as? IndexPath, segue.identifier == "ShowMenu" {
             let menuViewController = segue.destination as? MenuViewController
-            menuViewController?.viewModel = viewModel.menuViewModel(for: indexPath)
+            menuViewController?.viewModel = viewModel?.menuViewModel(for: indexPath)
         }
     }
 
@@ -50,14 +50,13 @@ class HomeViewVC: UIViewController {
 extension HomeViewVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.foodCount
+        viewModel?.foodCount ?? 0
     
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeViewCell", for: indexPath) as! HomeViewCell
-        print(viewModel.cellViewModel(at: indexPath).foodGroup.name)
-        cell.viewModel = viewModel.cellViewModel(at: indexPath)
+        cell.viewModel = viewModel?.cellViewModel(at: indexPath)
         return cell
     }
 }

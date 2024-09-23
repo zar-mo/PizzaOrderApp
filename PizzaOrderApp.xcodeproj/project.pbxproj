@@ -35,6 +35,8 @@
 		C91060562C9FD2F5007777D5 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91060552C9FD2F5007777D5 /* OrderViewController.swift */; };
 		C91060582C9FDCD9007777D5 /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91060572C9FDCD9007777D5 /* MenuViewCell.swift */; };
 		C910605B2C9FE7A3007777D5 /* ingredientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910605A2C9FE7A3007777D5 /* ingredientsViewModel.swift */; };
+		C910605D2CA1031E007777D5 /* OrderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910605C2CA1031E007777D5 /* OrderViewCell.swift */; };
+		C910605F2CA1061E007777D5 /* OrderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910605E2CA1061E007777D5 /* OrderCellViewModel.swift */; };
 		C9AC155E2C9B5CCF008EA485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC155D2C9B5CCF008EA485 /* AppDelegate.swift */; };
 		C9AC15602C9B5CCF008EA485 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC155F2C9B5CCF008EA485 /* SceneDelegate.swift */; };
 		C9AC15652C9B5CCF008EA485 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C9AC15642C9B5CCF008EA485 /* Base */; };
@@ -71,6 +73,8 @@
 		C91060552C9FD2F5007777D5 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		C91060572C9FDCD9007777D5 /* MenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
 		C910605A2C9FE7A3007777D5 /* ingredientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ingredientsViewModel.swift; sourceTree = "<group>"; };
+		C910605C2CA1031E007777D5 /* OrderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewCell.swift; sourceTree = "<group>"; };
+		C910605E2CA1061E007777D5 /* OrderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCellViewModel.swift; sourceTree = "<group>"; };
 		C9AC155A2C9B5CCF008EA485 /* PizzaOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AC155D2C9B5CCF008EA485 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9AC155F2C9B5CCF008EA485 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,9 +185,9 @@
 		C91060492C9FC72B007777D5 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				C910604A2C9FC757007777D5 /* Cell */,
 				C91060532C9FD2D3007777D5 /* MenuViewController.swift */,
 				C910604B2C9FC778007777D5 /* MenuViewModel.swift */,
-				C910604A2C9FC757007777D5 /* Cell */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -210,6 +214,8 @@
 		C910604E2C9FC830007777D5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C910605C2CA1031E007777D5 /* OrderViewCell.swift */,
+				C910605E2CA1061E007777D5 /* OrderCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -359,12 +365,14 @@
 				C91060482C9FBAAA007777D5 /* OrderItem.swift in Sources */,
 				C91060462C9FB8B7007777D5 /* MenuCellViewModel.swift in Sources */,
 				C910604C2C9FC778007777D5 /* MenuViewModel.swift in Sources */,
+				C910605D2CA1031E007777D5 /* OrderViewCell.swift in Sources */,
 				C9105FDD2C9D1CEE007777D5 /* SignUpVC.swift in Sources */,
 				C910602F2C9DFFEE007777D5 /* HomeCellViewModel.swift in Sources */,
 				C910603F2C9E0C74007777D5 /* Constants.swift in Sources */,
 				C91060442C9FAEC1007777D5 /* LocalRepository.swift in Sources */,
 				C91060542C9FD2D3007777D5 /* MenuViewController.swift in Sources */,
 				C9105FD82C9D0BF3007777D5 /* SignUpViewModel.swift in Sources */,
+				C910605F2CA1061E007777D5 /* OrderCellViewModel.swift in Sources */,
 				C9105F8B2C9BD778007777D5 /* AuthService.swift in Sources */,
 				C91060582C9FDCD9007777D5 /* MenuViewCell.swift in Sources */,
 				C91060362C9E055F007777D5 /* APIRequest.swift in Sources */,

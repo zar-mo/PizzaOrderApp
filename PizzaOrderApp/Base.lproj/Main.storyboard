@@ -51,7 +51,7 @@
             </objects>
             <point key="canvasLocation" x="153.43511450381678" y="-16.197183098591552"/>
         </scene>
-        <!--Order View Controller-->
+        <!--My Order-->
         <scene sceneID="PjP-gu-JTe">
             <objects>
                 <viewController id="QX1-cs-lCn" customClass="OrderViewController" customModule="PizzaOrderApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,22 +59,156 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJP-ZZ-QCh">
-                                <rect key="frame" x="175" y="362" width="41" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCU-9V-GHw">
+                                <rect key="frame" x="20" y="762" width="353" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3at-C1-NAr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="apple.logo" catalog="system" title="Confirm and Pay" imagePadding="7">
+                                    <color key="baseForegroundColor" name="Background"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pw-nv-PXC">
+                                <rect key="frame" x="20" y="697" width="353" height="50"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="rLj-1z-uhQ"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Confirm Order"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIw-zU-pQr">
+                                <rect key="frame" x="20" y="632" width="353" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8Q-Rj-533">
+                                        <rect key="frame" x="0.0" y="14.999999999999998" width="99" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 ₴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="na8-K0-8wj" userLabel="Total amount value">
+                                        <rect key="frame" x="290.33333333333331" y="11.999999999999998" width="62.666666666666686" height="26.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="na8-K0-8wj" firstAttribute="centerY" secondItem="LIw-zU-pQr" secondAttribute="centerY" id="DA6-t7-wrF"/>
+                                    <constraint firstAttribute="height" constant="50" id="War-vZ-1j4"/>
+                                    <constraint firstAttribute="trailing" secondItem="na8-K0-8wj" secondAttribute="trailing" id="cmY-rs-pfc"/>
+                                    <constraint firstItem="x8Q-Rj-533" firstAttribute="leading" secondItem="LIw-zU-pQr" secondAttribute="leading" id="mhO-aY-PMT"/>
+                                    <constraint firstItem="x8Q-Rj-533" firstAttribute="centerY" secondItem="LIw-zU-pQr" secondAttribute="centerY" id="vys-cf-1vt"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="r1m-0K-gCH">
+                                <rect key="frame" x="0.0" y="59" width="393" height="558"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderViewCell" rowHeight="116" id="MO5-Ap-Z4z" customClass="OrderViewCell" customModule="PizzaOrderApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="116"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MO5-Ap-Z4z" id="6PQ-dc-U1Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="116"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza3" translatesAutoresizingMaskIntoConstraints="NO" id="Dby-50-3k2">
+                                                    <rect key="frame" x="30" y="21" width="59" height="74"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Dby-50-3k2" secondAttribute="height" multiplier="1:1" id="7gp-35-ksb"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="146" translatesAutoresizingMaskIntoConstraints="NO" id="DD6-Oi-n9L">
+                                                    <rect key="frame" x="99" y="31" width="284" height="54"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b5W-zQ-rr1" userLabel="Stack 1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="69" height="54"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Margarita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Xg-AB-soU" userLabel="Title">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="69" height="23"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mozarella" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2T-DW-rkQ" userLabel="Subtitle">
+                                                                    <rect key="frame" x="0.0" y="31" width="69" height="23"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GWF-mu-bMI" userLabel="Stack 2">
+                                                            <rect key="frame" x="215" y="0.0" width="69" height="54"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 X 120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMl-xA-JlD" userLabel="Detail price label">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="69" height="23"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="360.00 ₴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwp-pP-2MY" userLabel="Total price label">
+                                                                    <rect key="frame" x="0.0" y="31" width="69" height="23"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="DD6-Oi-n9L" secondAttribute="trailing" constant="10" id="3Vn-co-Pq6"/>
+                                                <constraint firstItem="DD6-Oi-n9L" firstAttribute="centerY" secondItem="6PQ-dc-U1Z" secondAttribute="centerY" id="9QB-jW-VTt"/>
+                                                <constraint firstItem="DD6-Oi-n9L" firstAttribute="leading" secondItem="Dby-50-3k2" secondAttribute="trailing" constant="10" id="LdS-7k-VW0"/>
+                                                <constraint firstItem="Dby-50-3k2" firstAttribute="leading" secondItem="6PQ-dc-U1Z" secondAttribute="leadingMargin" constant="10" id="Lid-1Q-BcL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Dby-50-3k2" secondAttribute="bottom" constant="10" id="RKa-ol-iDN"/>
+                                                <constraint firstItem="Dby-50-3k2" firstAttribute="top" secondItem="6PQ-dc-U1Z" secondAttribute="topMargin" constant="10" id="jKI-3k-ThU"/>
+                                                <constraint firstItem="Dby-50-3k2" firstAttribute="width" secondItem="6PQ-dc-U1Z" secondAttribute="width" multiplier="0.15" id="mzC-Bj-5t2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellImageView" destination="Dby-50-3k2" id="VN9-dm-jJy"/>
+                                            <outlet property="detailPriceLabel" destination="kMl-xA-JlD" id="ewM-9K-Lf6"/>
+                                            <outlet property="subtitleLabel" destination="t2T-DW-rkQ" id="21K-oI-ybu"/>
+                                            <outlet property="titleLabel" destination="9Xg-AB-soU" id="2yv-Eo-hGa"/>
+                                            <outlet property="totalPriceLabel" destination="iwp-pP-2MY" id="P1W-rD-zAW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zP6-lt-cCT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9pw-nv-PXC" firstAttribute="leading" secondItem="zP6-lt-cCT" secondAttribute="leading" constant="20" id="1nq-f8-FOs"/>
+                            <constraint firstItem="zP6-lt-cCT" firstAttribute="trailing" secondItem="9pw-nv-PXC" secondAttribute="trailing" constant="20" id="3Zu-3W-HhL"/>
+                            <constraint firstItem="r1m-0K-gCH" firstAttribute="top" secondItem="zP6-lt-cCT" secondAttribute="top" id="Afe-ll-KLU"/>
+                            <constraint firstItem="9pw-nv-PXC" firstAttribute="top" secondItem="LIw-zU-pQr" secondAttribute="bottom" constant="15" id="Hkt-Az-1BA"/>
+                            <constraint firstItem="zP6-lt-cCT" firstAttribute="trailing" secondItem="LIw-zU-pQr" secondAttribute="trailing" constant="20" id="LfS-8U-vGn"/>
+                            <constraint firstItem="LIw-zU-pQr" firstAttribute="leading" secondItem="zP6-lt-cCT" secondAttribute="leading" constant="20" id="Q3D-zV-0tS"/>
+                            <constraint firstAttribute="bottom" secondItem="aCU-9V-GHw" secondAttribute="bottom" constant="40" id="U91-k2-AJU"/>
+                            <constraint firstItem="zP6-lt-cCT" firstAttribute="trailing" secondItem="r1m-0K-gCH" secondAttribute="trailing" id="WS5-mL-iHf"/>
+                            <constraint firstItem="LIw-zU-pQr" firstAttribute="top" secondItem="r1m-0K-gCH" secondAttribute="bottom" constant="15" id="ZID-Ev-Fym"/>
+                            <constraint firstAttribute="trailing" secondItem="aCU-9V-GHw" secondAttribute="trailing" constant="20" id="f0C-5y-ei0"/>
+                            <constraint firstItem="aCU-9V-GHw" firstAttribute="leading" secondItem="FJm-CO-6Io" secondAttribute="leading" constant="20" id="h1G-4J-bsY"/>
+                            <constraint firstItem="r1m-0K-gCH" firstAttribute="leading" secondItem="zP6-lt-cCT" secondAttribute="leading" id="lMl-hd-ZeD"/>
+                            <constraint firstItem="aCU-9V-GHw" firstAttribute="top" secondItem="9pw-nv-PXC" secondAttribute="bottom" constant="15" id="lSc-tF-qJI"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Ity-4A-ZqL"/>
+                    <navigationItem key="navigationItem" title="My Order" id="Fxw-hf-50D"/>
+                    <connections>
+                        <outlet property="tableView" destination="r1m-0K-gCH" id="rAi-Vc-PfX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSa-u6-QBp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1073" y="736"/>
+            <point key="canvasLocation" x="1481.679389312977" y="807.74647887323943"/>
         </scene>
         <!--Food-->
         <scene sceneID="HRB-KS-Cca">
@@ -164,10 +298,10 @@
             </objects>
             <point key="canvasLocation" x="1072.5190839694656" y="-9.1549295774647899"/>
         </scene>
-        <!--Pizza-->
+        <!--Menu-->
         <scene sceneID="v3Z-j7-7YH">
             <objects>
-                <viewController id="L4i-4h-ezL" customClass="MenuViewController" customModule="PizzaOrderApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="L4i-4h-ezL" userLabel="Menu" customClass="MenuViewController" customModule="PizzaOrderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FeY-Xp-0xT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,6 +331,9 @@
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="favorites:" destination="p1f-7K-JMx" eventType="touchUpInside" id="68a-0c-pez"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Margaritta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CM-LW-z24" userLabel="Title">
                                                     <rect key="frame" x="123.66666666666667" y="26" width="214.33333333333331" height="23"/>
@@ -219,6 +356,9 @@
                                                     <color key="tintColor" name="Background"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system" title="Add" imagePadding="2"/>
+                                                    <connections>
+                                                        <action selector="addButton:" destination="p1f-7K-JMx" eventType="touchUpInside" id="LIj-nI-u87"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="450 g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5n-72-zLm" userLabel="Weight Label">
                                                     <rect key="frame" x="123.66666666666669" y="82" width="46" height="21"/>
@@ -254,6 +394,15 @@
                                                 <constraint firstItem="3HD-cr-xW9" firstAttribute="width" secondItem="wB3-mr-EzC" secondAttribute="width" multiplier="0.2" id="zd1-bj-syQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addButtonLabel" destination="MHd-gf-wVf" id="OTa-wy-2Sh"/>
+                                            <outlet property="cellImageView" destination="3HD-cr-xW9" id="ACm-ze-N5n"/>
+                                            <outlet property="favoriteLabel" destination="sBG-l4-hcV" id="FeB-Ic-ken"/>
+                                            <outlet property="priceLabel" destination="nwK-FM-EdU" id="5H7-b6-z7A"/>
+                                            <outlet property="subtitleLabel" destination="PLk-IE-XYC" id="bit-bs-2hs"/>
+                                            <outlet property="titleLabel" destination="8CM-LW-z24" id="9fN-FZ-yev"/>
+                                            <outlet property="weightLabel" destination="r5n-72-zLm" id="LJB-9v-xkQ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -270,7 +419,7 @@
                     <navigationItem key="navigationItem" title="Pizza" id="1Yf-xF-A8W">
                         <barButtonItem key="rightBarButtonItem" title="cart" image="cart" catalog="system" id="IBk-rE-4CI">
                             <connections>
-                                <segue destination="QX1-cs-lCn" kind="show" identifier="ShowOrderFromMenu" id="WBR-cE-Nd9"/>
+                                <segue destination="QX1-cs-lCn" kind="show" identifier="ShowOrder" id="bkc-KJ-iu9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -576,9 +725,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WBR-cE-Nd9"/>
+        <segue reference="bkc-KJ-iu9"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="apple.logo" catalog="system" width="105" height="128"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="icon" width="512" height="512"/>
         <image name="pizza2" width="1024" height="683"/>
