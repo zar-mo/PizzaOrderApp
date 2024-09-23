@@ -31,7 +31,7 @@ class SignUpViewModelImpl : SignUpViewModel {
     }
     
     private func initilizeHomeViewModel() {
-        homeViewModel = HomeViewModelImpl()
+        homeViewModel = HomeViewModelImpl(authService: authService)
     }
     
     

@@ -28,6 +28,7 @@ class MenuViewModelImpl : MenuViewModel {
     var cartAmount: String {  "\(ordersManager?.cartAmount ?? 0)" }
     var foodCount: Int { foodGroup.foodItems.count }
     
+    private var orderItems: [OrderItem] { ordersManager?.orderItems ?? [] }
     var ordersManager: OrdersManager?
     
     
@@ -53,6 +54,20 @@ class MenuViewModelImpl : MenuViewModel {
     
     func ingredientViewModel(at indexPath: IndexPath) -> any IngredientsViewModel {
         IngredientsViewModelImpl(foodItem: foodGroup.foodItems[indexPath.row])
+    }
+    
+    func increaseAction(at indexPath: IndexPath) {
+        let foodItem = orderItems[indexPath.row].foodItem
+        ordersManager?.add(foodItem)
+    }
+    
+    func decreaseAction(at indexPath: IndexPath) {
+        let orderItem = orderItems[indexPath.row]
+        ordersManager?.remove(orderItem.foodItem)
+    }
+    
+    func confirmButtonTapped() {
+        ordersManager?.removeAll()
     }
     
     @objc func ordersListDidChange(){

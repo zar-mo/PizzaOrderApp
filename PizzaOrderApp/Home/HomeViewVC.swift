@@ -31,11 +31,20 @@ class HomeViewVC: UIViewController {
   
     }
     
+    @IBAction func signoutButton(_ sender: UIBarButtonItem) {
+        
+        Task{
+            do{
+                try await viewModel?.signOut()
+                print("successfully signed out")
+            }
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowOrder" {
-            let orderViewController = segue.destination as? OrderViewController
-            //orderViewController?.viewModel = viewModel.orderViewModel()
-          
+            if let orderViewController = segue.destination as? OrderViewController {
+                orderViewController.viewModel = viewModel?.orderViewModel()
+            }
         }else if let indexPath = sender as? IndexPath, segue.identifier == "ShowMenu" {
             let menuViewController = segue.destination as? MenuViewController
             menuViewController?.viewModel = viewModel?.menuViewModel(for: indexPath)

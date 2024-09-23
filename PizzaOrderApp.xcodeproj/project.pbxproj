@@ -37,6 +37,8 @@
 		C910605B2C9FE7A3007777D5 /* ingredientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910605A2C9FE7A3007777D5 /* ingredientsViewModel.swift */; };
 		C910605D2CA1031E007777D5 /* OrderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910605C2CA1031E007777D5 /* OrderViewCell.swift */; };
 		C910605F2CA1061E007777D5 /* OrderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910605E2CA1061E007777D5 /* OrderCellViewModel.swift */; };
+		C91060612CA11057007777D5 /* IngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91060602CA11057007777D5 /* IngredientViewController.swift */; };
+		C92C578E2CA1458200D1C772 /* GratitudeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C578D2CA1458200D1C772 /* GratitudeViewController.swift */; };
 		C9AC155E2C9B5CCF008EA485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC155D2C9B5CCF008EA485 /* AppDelegate.swift */; };
 		C9AC15602C9B5CCF008EA485 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC155F2C9B5CCF008EA485 /* SceneDelegate.swift */; };
 		C9AC15652C9B5CCF008EA485 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C9AC15642C9B5CCF008EA485 /* Base */; };
@@ -75,6 +77,8 @@
 		C910605A2C9FE7A3007777D5 /* ingredientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ingredientsViewModel.swift; sourceTree = "<group>"; };
 		C910605C2CA1031E007777D5 /* OrderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewCell.swift; sourceTree = "<group>"; };
 		C910605E2CA1061E007777D5 /* OrderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCellViewModel.swift; sourceTree = "<group>"; };
+		C91060602CA11057007777D5 /* IngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientViewController.swift; sourceTree = "<group>"; };
+		C92C578D2CA1458200D1C772 /* GratitudeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeViewController.swift; sourceTree = "<group>"; };
 		C9AC155A2C9B5CCF008EA485 /* PizzaOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AC155D2C9B5CCF008EA485 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9AC155F2C9B5CCF008EA485 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,8 +228,17 @@
 			isa = PBXGroup;
 			children = (
 				C910605A2C9FE7A3007777D5 /* ingredientsViewModel.swift */,
+				C91060602CA11057007777D5 /* IngredientViewController.swift */,
 			);
 			path = Ingredients;
+			sourceTree = "<group>";
+		};
+		C92C578C2CA1454E00D1C772 /* Gratitude */ = {
+			isa = PBXGroup;
+			children = (
+				C92C578D2CA1458200D1C772 /* GratitudeViewController.swift */,
+			);
+			path = Gratitude;
 			sourceTree = "<group>";
 		};
 		C9AC15512C9B5CCF008EA485 = {
@@ -253,6 +266,7 @@
 				C910603D2C9E0C58007777D5 /* Constants */,
 				C91060492C9FC72B007777D5 /* Menu */,
 				C9105FD92C9D15BB007777D5 /* Extensions */,
+				C92C578C2CA1454E00D1C772 /* Gratitude */,
 				C9105FD62C9D0BDF007777D5 /* SignUp */,
 				C910604D2C9FC816007777D5 /* Order */,
 				C9105FD12C9D0AE5007777D5 /* SignIn */,
@@ -363,10 +377,12 @@
 				C910605B2C9FE7A3007777D5 /* ingredientsViewModel.swift in Sources */,
 				C9AC15602C9B5CCF008EA485 /* SceneDelegate.swift in Sources */,
 				C91060482C9FBAAA007777D5 /* OrderItem.swift in Sources */,
+				C92C578E2CA1458200D1C772 /* GratitudeViewController.swift in Sources */,
 				C91060462C9FB8B7007777D5 /* MenuCellViewModel.swift in Sources */,
 				C910604C2C9FC778007777D5 /* MenuViewModel.swift in Sources */,
 				C910605D2CA1031E007777D5 /* OrderViewCell.swift in Sources */,
 				C9105FDD2C9D1CEE007777D5 /* SignUpVC.swift in Sources */,
+				C91060612CA11057007777D5 /* IngredientViewController.swift in Sources */,
 				C910602F2C9DFFEE007777D5 /* HomeCellViewModel.swift in Sources */,
 				C910603F2C9E0C74007777D5 /* Constants.swift in Sources */,
 				C91060442C9FAEC1007777D5 /* LocalRepository.swift in Sources */,

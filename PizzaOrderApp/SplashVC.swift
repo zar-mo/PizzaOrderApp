@@ -41,7 +41,7 @@ extension SplashVC {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewVC")
-        let homeViewModel = HomeViewModelImpl()
+        let homeViewModel = HomeViewModelImpl(authService: authService)
         (homeViewController as? HomeViewVC)?.viewModel = homeViewModel
         print("navigation to home called")
         navigationController?.setViewControllers([homeViewController], animated: true)

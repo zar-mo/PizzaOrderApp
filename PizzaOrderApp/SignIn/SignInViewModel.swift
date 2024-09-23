@@ -46,7 +46,7 @@ class SignInViewModelImpl: SignInViewModel {
         
         do{
             try await authService.signIn(identifier: identifier, password: identifier)
-            self.homeViewModel = HomeViewModelImpl()
+            self.homeViewModel = HomeViewModelImpl(authService: authService)
         }
         
         

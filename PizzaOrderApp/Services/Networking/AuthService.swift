@@ -12,7 +12,7 @@ protocol AuthServiceProtocol {
     func getCurrentUser<T: Credential>() async throws -> T
     func signIn(identifier: String, password: String) async throws
     func signUp(identifier: String, password: String) async throws
-    func signOut(key: String) async throws
+    func signOut() async throws
 }
 
 
@@ -54,7 +54,7 @@ class AuthService: AuthServiceProtocol {
        
     }
     
-    func signOut(key: String) async throws {
+    func signOut() async throws {
         
          credentialStorage.remove(key: "currentUser")
     }

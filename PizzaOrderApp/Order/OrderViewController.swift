@@ -11,14 +11,44 @@ class OrderViewController: UIViewController {
 
     var viewModel: OrderViewModel?
     
+   
+    //@IBOutlet  var confirmButtons: [UIButton]!
+    @IBOutlet weak var applePayTapped: UIButton!
+    @IBOutlet weak var totalValueLabel: UILabel!
+    @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        setupUI()
+        
+        viewModel?.onUpdate = { [weak self] viewModel in
+            self?.totalAmountLabel.text = viewModel.totalAmount
+            //self?.confirmButtons.forEach { $0.isEnabled = viewModel.foodCount > 0 }
+            DispatchQueue.main.async {
+                //self?.reloadData(animated: true)
+            }
+        }
    
     }
+    
+    func setupUI(){
+        totalValueLabel.text = viewModel?.totalAmount
+    }
 
+    @IBAction func applePayTapped(_ sender: UIButton) {
+        
+    }
+
+    @IBAction func confirmButtonTapped(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "ShowGratitudeMessage", sender: nil)
+        viewModel?.confirmButtonTapped()
+        
+        
+    }
+    
 }
 
 // MARK: - UITableViewDataSource
@@ -35,4 +65,10 @@ extension OrderViewController: UITableViewDataSource {
         cell.viewModel = viewModel?.cellViewModel(at: indexPath)
         return cell
     }
+}
+
+// MARK: - UITableViewDelegate
+
+extension OrderViewController: UITableViewDelegate {
+    
 }

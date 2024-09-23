@@ -16,10 +16,12 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         
         viewModel?.onUpdate = {[weak self] viewModel in
             DispatchQueue.main.async{
                 self?.tableView.reloadData()
+                
             }
         }
    
@@ -30,6 +32,10 @@ class MenuViewController: UIViewController {
         if segue.identifier == "ShowOrder" {
             if let orderViewController = segue.destination as? OrderViewController {
                 orderViewController.viewModel = viewModel?.orderViewModel()
+            }
+        } else if let indexPath = sender as? IndexPath, segue.identifier == "ShowIngredients" {
+            if let ingredientsViewController = segue.destination as? IngredientViewController {
+                ingredientsViewController.viewModel = viewModel?.ingredientViewModel(at: indexPath)
             }
         }
        
@@ -57,6 +63,6 @@ extension MenuViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //performSegue(withIdentifier: "ShowIngredients", sender: indexPath)
+        performSegue(withIdentifier: "ShowIngredients", sender: indexPath)
     }
 }

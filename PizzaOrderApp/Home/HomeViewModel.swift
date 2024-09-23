@@ -16,12 +16,15 @@ protocol HomeViewModel {
     func cellViewModel(at indexPath: IndexPath) -> HomeCellViewModel
     func menuViewModel(for indexPath: IndexPath) -> MenuViewModel
     func orderViewModel() -> OrderViewModel
+    func signOut() async throws
     
 }
 
 class HomeViewModelImpl: HomeViewModel {
  
     var cartAmount: String { "\(ordersManager?.cartAmount ?? 0)"}
+    
+    var authService: AuthService
     
     
     private var foodGroups: [FoodGroup] = [] {
@@ -45,8 +48,9 @@ class HomeViewModelImpl: HomeViewModel {
     
     private let ordersManager: OrdersManager?
     
-    init() {
+    init(authService: AuthService) {
         
+        self.authService = authService
         self.ordersManager = UIApplication.shared.sceneDelegate?.ordersRepository
         self.ordersManager?.observe(self, selector: #selector(ordersListDidChange))
         
@@ -81,6 +85,10 @@ class HomeViewModelImpl: HomeViewModel {
     
     func orderViewModel() -> any OrderViewModel {
         return OrderViewModelImpl()
+    }
+    
+    func signOut() async throws {
+        try await authService.signOut()
     }
     
     @objc private func ordersListDidChange() {
