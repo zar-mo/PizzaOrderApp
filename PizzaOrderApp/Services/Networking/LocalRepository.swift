@@ -27,7 +27,9 @@ extension LocalRepository where Model : Codable & Identifiable{
     }
     
     private var defaults: UserDefaults {UserDefaults.standard}
-    private var key: String {String(reflecting: Self.self) + String(reflecting: Self.Model.self)}
+    private var key: String {
+        print(String(reflecting: Self.self) + String(reflecting: Self.Model.self))
+        return String(reflecting: Self.self) + String(reflecting: Self.Model.self)}
     
     func fetch() {
         let data = defaults.array(forKey: key) as? [Data] ?? []
@@ -35,7 +37,7 @@ extension LocalRepository where Model : Codable & Identifiable{
     }
     
     func save() {
-        
+        print("save pressed    \(key)")
         let data = items.compactMap { try? JSONEncoder().encode($0)}
         defaults.setValue(data, forKey: key)
     }
@@ -61,14 +63,14 @@ class OrdersRepository: LocalRepository, OrdersManager {
     
     var items: [FoodItem] = [] {
         didSet { 
-            
+            save()
             notify() }
     }
     
     var orderItems: [OrderItem]  {
         var orderItems: [OrderItem] = []
         for item in items {
-            if var index = orderItems.firstIndex(where: {$0.foodItem.id == item.id }){
+            if let index = orderItems.firstIndex(where: {$0.foodItem.id == item.id }){
                 orderItems[index].qty += 1
             }else {
                 orderItems.append(OrderItem(foodItem: item, qty: 1))
@@ -77,7 +79,7 @@ class OrdersRepository: LocalRepository, OrdersManager {
         return orderItems
     }
     
-    var cartAmount: Int { items.reduce(0){ 0 + $1.price}}
+    var cartAmount: Int { items.reduce(0){ $0 + $1.price}}
     
     func remove(_ foodItem: FoodItem) {
         guard let index = items.firstIndex(where: { $0.id == foodItem.id }) else { return }
