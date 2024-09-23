@@ -60,7 +60,9 @@ class OrdersRepository: LocalRepository, OrdersManager {
     
     
     var items: [FoodItem] = [] {
-        didSet { notify() }
+        didSet { 
+            
+            notify() }
     }
     
     var orderItems: [OrderItem]  {

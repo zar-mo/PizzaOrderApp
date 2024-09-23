@@ -33,13 +33,30 @@ class HomeViewVC: UIViewController {
     
     @IBAction func signoutButton(_ sender: UIBarButtonItem) {
         
+        
         Task{
             do{
+                
+                
                 try await viewModel?.signOut()
                 print("successfully signed out")
+                presentSplashViewController()
+                
             }
         }
     }
+    
+    
+    private func presentSplashViewController() {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let splashViewController = storyboard.instantiateViewController(withIdentifier: "SplashScreen") as? SplashVC{
+                
+                let authService = AuthService(credentialStorage: CredentialStorage())
+                splashViewController.authService = authService
+                navigationController?.setViewControllers([splashViewController], animated: true)
+            }
+        }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowOrder" {
             if let orderViewController = segue.destination as? OrderViewController {

@@ -46,13 +46,16 @@ class HomeViewModelImpl: HomeViewModel {
         }
     }
     
-    private let ordersManager: OrdersManager?
+    private var ordersManager: OrdersManager?
     
     init(authService: AuthService) {
         
         self.authService = authService
-        self.ordersManager = UIApplication.shared.sceneDelegate?.ordersRepository
-        self.ordersManager?.observe(self, selector: #selector(ordersListDidChange))
+        
+        DispatchQueue.main.async{
+            self.ordersManager = UIApplication.shared.sceneDelegate?.ordersRepository
+            self.ordersManager?.observe(self, selector: #selector(self.ordersListDidChange))
+        }
         
         obtainData()
         
