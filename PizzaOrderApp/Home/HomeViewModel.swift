@@ -24,7 +24,7 @@ class HomeViewModelImpl: HomeViewModel {
  
     var cartAmount: String { "\(ordersManager?.cartAmount ?? 0)"}
     
-    var authService: AuthService
+    var authService: AuthServiceProtocol
     
     
     private var foodGroups: [FoodGroup] = [] {
@@ -48,7 +48,7 @@ class HomeViewModelImpl: HomeViewModel {
     
     private var ordersManager: OrdersManager?
     
-    init(authService: AuthService) {
+    init(authService: AuthServiceProtocol) {
         
         self.authService = authService
         

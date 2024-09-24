@@ -8,57 +8,46 @@
 import Foundation
 
 protocol AuthServiceProtocol {
-    
     func getCurrentUser<T: Credential>() async throws -> T
-    func signIn(identifier: String, password: String) async throws
-    func signUp(identifier: String, password: String) async throws
+    func signIn<T: Credential>(credential: T) async throws
+    func signUp<T: Credential>(credential: T) async throws
     func signOut() async throws
 }
 
-
 class AuthService: AuthServiceProtocol {
     
-    private let credentialStorage: CredentialStorage
     
-    init(credentialStorage:  CredentialStorage) {
+    var credentialStorage: UserDefaultStorageProtocol
+    
+    init(credentialStorage: UserDefaultStorageProtocol) {
         self.credentialStorage = credentialStorage
     }
     
     func getCurrentUser<T: Credential>() async throws -> T {
-        
-        return try credentialStorage.load(objectType: T.self , key: "currentUser")
+        return try credentialStorage.load(objectType: T.self, key: "currentUser")
     }
     
-    func signIn(identifier: String, password: String) async throws {
-        
-        do{
-            let existingPassword = try credentialStorage.load(objectType: String.self , key: identifier)
+    func signIn<T: Credential>(credential: T) async throws {
+        do {
+            let existingCredential = try credentialStorage.load(objectType: T.self, key: credential.identifier)
             
-            if existingPassword == password {
-                let currentUser = PhoneCredential(identifier: identifier, password: password, type: .phonePassword)
-                try credentialStorage.save(object: currentUser, key: "currentUser")
-            }else {
+            if existingCredential.password == credential.password {
+               try credentialStorage.save(object: credential, key: "currentUser")
+            } else {
                 throw TemporaryErrorType.dataNotFound
             }
+        } catch {
+            throw TemporaryErrorType.dataNotFound
         }
-      
     }
     
-    func signUp(identifier: String, password: String) async throws {
+    func signUp<T: Credential>(credential: T) async throws {
         
-        do{
-            let currentUser = PhoneCredential(identifier: identifier, password: password, type: .phonePassword)
-            try credentialStorage.save(object: currentUser, key: "currentUser")
-            try credentialStorage.save(object: password, key: identifier)
-        }
-       
+        try credentialStorage.save(object: credential, key: "currentUser")
+        try credentialStorage.save(object: credential, key: "fuck")
     }
     
     func signOut() async throws {
-        
-         credentialStorage.remove(key: "currentUser")
+        credentialStorage.remove(key: "currentUser")
     }
-    
-
 }
-

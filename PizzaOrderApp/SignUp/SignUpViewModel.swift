@@ -15,17 +15,18 @@ protocol SignUpViewModel {
 
 class SignUpViewModelImpl : SignUpViewModel {
     
-    var authService: AuthService
+    var authService: AuthServiceProtocol
     var homeViewModel:  HomeViewModel?
     
-    init(authService: AuthService) {
+    init(authService: AuthServiceProtocol) {
         self.authService = authService
     }
     
     func signUp(identifier: String, password: String) async throws {
         
         do{
-            try await authService.signUp(identifier: identifier, password: password)
+            let phoneCredential = PhoneCredential(identifier: identifier, password: password, type: .phonePassword)
+            try await authService.signUp(credential: phoneCredential)
             initilizeHomeViewModel()
         }
     }

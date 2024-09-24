@@ -28,12 +28,12 @@ class SignInViewModelImpl: SignInViewModel {
         didSet { onUpdate?(.homeViewDidSet)}
        
     }
-    private let authService: AuthService
+    private let authService:  AuthServiceProtocol
     private var phone: String?
     private var password: String?
     
     
-    init(authService: AuthService) {
+    init(authService:  AuthServiceProtocol) {
         self.authService = authService
     }
     
@@ -45,7 +45,8 @@ class SignInViewModelImpl: SignInViewModel {
     func signInButtonTapped(identifier: String, password: String) async throws{
         
         do{
-            try await authService.signIn(identifier: identifier, password: identifier)
+            let phoneCredential = PhoneCredential(identifier: identifier, password: password, type: .phonePassword)
+            try await authService.signIn(credential: phoneCredential)
             self.homeViewModel = HomeViewModelImpl(authService: authService)
         }
         
@@ -54,7 +55,7 @@ class SignInViewModelImpl: SignInViewModel {
     
     func signUpViewModel() ->  SignUpViewModel {
         
-        return SignUpViewModelImpl(authService: AuthService(credentialStorage: CredentialStorage()))
+        return SignUpViewModelImpl(authService: authService)
     }
     
 }
