@@ -15,6 +15,8 @@ protocol UserDefaultStorageProtocol {
     func save(object: Codable, key: String) throws
     func load<T: Codable>(objectType: T.Type, key: String) throws -> T
     func remove(key: String)
+    
+    func loadd<T: Codable>(objectType: T.Type, key: String) throws
 }
 
 class CredentialStorage: UserDefaultStorageProtocol {
@@ -27,16 +29,26 @@ extension UserDefaultStorageProtocol {
     func save(object: Codable, key: String) throws {
         let jsonData = try JSONEncoder().encode(object)
         UserDefaults.standard.setValue(jsonData, forKey: key)
+
+        
+        
     }
     
     func load<T: Codable>(objectType: T.Type, key: String) throws -> T {
-        print("entered object:   \(objectType)   key:  \(key)")
         guard let jsonData = UserDefaults.standard.data(forKey: key),
               let decodedObject = try? JSONDecoder().decode(T.self, from: jsonData) else {
             throw TemporaryErrorType.dataNotFound
         }
-        print("key:   \(key)    object:   \(decodedObject)")
         return decodedObject
+    }
+    
+    
+    
+    func loadd<T: Codable>(objectType: T.Type, key: String) throws {
+        guard let jsonData = UserDefaults.standard.data(forKey: key) else {
+            throw TemporaryErrorType.dataNotFound
+        }
+        
     }
     
     func remove(key: String) {

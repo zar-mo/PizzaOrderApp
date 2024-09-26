@@ -28,9 +28,10 @@ class AuthService: AuthServiceProtocol {
     }
     
     func signIn<T: Credential>(credential: T) async throws {
+        
         do {
-            let existingCredential = try credentialStorage.load(objectType: T.self, key: credential.identifier)
             
+            let existingCredential = try credentialStorage.load<T>(objectType: T.self, key: credential.identifier)
             if existingCredential.password == credential.password {
                try credentialStorage.save(object: credential, key: "currentUser")
             } else {
@@ -42,9 +43,9 @@ class AuthService: AuthServiceProtocol {
     }
     
     func signUp<T: Credential>(credential: T) async throws {
-        
+
         try credentialStorage.save(object: credential, key: "currentUser")
-        try credentialStorage.save(object: credential, key: "fuck")
+        try credentialStorage.save(object: credential, key: credential.identifier)
     }
     
     func signOut() async throws {

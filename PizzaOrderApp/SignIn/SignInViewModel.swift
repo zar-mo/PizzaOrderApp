@@ -47,7 +47,7 @@ class SignInViewModelImpl: SignInViewModel {
         do{
             let phoneCredential = PhoneCredential(identifier: identifier, password: password, type: .phonePassword)
             try await authService.signIn(credential: phoneCredential)
-            self.homeViewModel = HomeViewModelImpl(authService: authService)
+            initilizeHomeViewModel()
         }
         
         
@@ -56,6 +56,10 @@ class SignInViewModelImpl: SignInViewModel {
     func signUpViewModel() ->  SignUpViewModel {
         
         return SignUpViewModelImpl(authService: authService)
+    }
+    
+    private func initilizeHomeViewModel() {
+        homeViewModel = HomeViewModelImpl(authService: authService)
     }
     
 }

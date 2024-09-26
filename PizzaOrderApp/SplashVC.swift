@@ -14,15 +14,9 @@ class SplashVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let userDefaults = UserDefaults.standard
-        let allData = userDefaults.dictionaryRepresentation()
-
-        for (key, value) in allData {
-            print("Key >>>>>>>>>>>>>>: \(key), Value: \(value)")
-        }
+        print("splash view loaded")
         
-        
-        
+       
         checkAuth()
         
     }
@@ -34,8 +28,7 @@ extension SplashVC {
     func checkAuth() {
         
         Task {
-            
-            
+           
                 do {
                     
                     let currentUser: PhoneCredential = try await authService.getCurrentUser() 

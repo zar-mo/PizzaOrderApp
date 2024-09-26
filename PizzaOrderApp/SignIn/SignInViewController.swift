@@ -69,7 +69,7 @@ extension SignInViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewVC")
         
-        //(homeViewController as? HomeViewVC)?.viewModel = viewModel
+        (homeViewController as? HomeViewVC)?.viewModel = viewModel
         navigationController?.setViewControllers([homeViewController], animated: true)
     }
     

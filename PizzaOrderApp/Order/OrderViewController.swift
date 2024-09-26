@@ -21,6 +21,7 @@ class OrderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         setupUI()
         
         viewModel?.onUpdate = { [weak self] viewModel in
@@ -70,5 +71,26 @@ extension OrderViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension OrderViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let increaseAction = UIContextualAction(style: .normal, title: nil) { [weak self] (action, view, completion) in
+            self?.viewModel?.increaseAction(at: indexPath)
+            completion(true)
+        }
+        increaseAction.image = UIImage(systemName: "plus.square.fill")
+        increaseAction.backgroundColor = UIColor.systemGreen
+        return UISwipeActionsConfiguration(actions: [])
+
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let decreaseAction = UIContextualAction(style: .normal, title: nil) { [weak self] (action, view, completion) in
+            self?.viewModel?.decreaseAction(at: indexPath)
+            completion(true)
+        }
+        decreaseAction.image = UIImage(systemName: "minus.square.fill")
+        decreaseAction.backgroundColor = UIColor.systemRed
+        return UISwipeActionsConfiguration(actions: [])
+    }
     
 }
